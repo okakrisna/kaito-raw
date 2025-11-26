@@ -3593,65 +3593,53 @@ i.fas.fa-check-circle {visibility: hidden;}
 			fill: currentColor;
 		}
 
-		/* Desktop Layout */
+		/* Vertical Layout - All Devices */
+		.couple-horizontal-layout {
+			display: flex !important;
+			flex-direction: column !important;
+		}
+
+		.couple-horizontal-layout > .e-con-full {
+			flex: 1 1 100% !important;
+			max-width: 100% !important;
+			width: 100% !important;
+		}
+
+		/* Add horizontal divider between cards */
+		.elementor-element-45926986::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 10%;
+			width: 80%;
+			height: 1px;
+			background: linear-gradient(to right,
+				transparent,
+				rgba(0,0,0,0.05) 20%,
+				rgba(0,0,0,0.05) 80%,
+				transparent
+			);
+		}
+
+		/* Desktop specific */
 		@media (min-width: 769px) {
-			.couple-horizontal-layout {
-				display: flex !important;
-				flex-direction: row !important;
-				flex-wrap: nowrap !important;
-			}
 			.couple-horizontal-layout > .e-con-full {
-				flex: 1 1 50% !important;
-				max-width: 50% !important;
+				padding: 80px 100px !important;
 			}
 
-			/* Add subtle divider between cards */
-			.elementor-element-45926986::after {
-				content: '';
-				position: absolute;
-				right: 0;
-				top: 10%;
-				height: 80%;
-				width: 1px;
-				background: linear-gradient(to bottom,
-					transparent,
-					rgba(0,0,0,0.05) 20%,
-					rgba(0,0,0,0.05) 80%,
-					transparent
-				);
+			.couple-horizontal-layout img {
+				max-width: 320px !important;
 			}
 		}
 
-		/* Mobile Layout */
+		/* Mobile specific */
 		@media (max-width: 768px) {
-			.couple-horizontal-layout {
-				flex-direction: column !important;
-			}
 			.couple-horizontal-layout > .e-con-full {
-				flex: 1 1 100% !important;
-				max-width: 100% !important;
-				width: 100% !important;
 				padding: 50px 30px !important;
 			}
 
 			.couple-horizontal-layout img {
 				max-width: 240px !important;
-			}
-
-			/* Add horizontal divider for mobile */
-			.elementor-element-45926986::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 10%;
-				width: 80%;
-				height: 1px;
-				background: linear-gradient(to right,
-					transparent,
-					rgba(0,0,0,0.05) 20%,
-					rgba(0,0,0,0.05) 80%,
-					transparent
-				);
 			}
 		}
 
