@@ -67,7 +67,7 @@
             display: none !important;
         }
 
-        /* Cover Section dengan Background Image */
+        /* Cover Section - Split Screen Desktop */
         #section-cover {
             position: fixed;
             top: 0;
@@ -85,53 +85,97 @@
         }
 
         .cover-overlay {
-            position: absolute;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+            background: #3a3a3a;
+        }
+
+        .cover-left {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
                         url('/wp-content/uploads/2024/07/Fotno-Slide-Hitungan-Hari-2-Large-SHERLY-1.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 100px 80px;
+        }
+
+        .cover-left-name {
+            font-family: 'ovo', serif;
+            font-size: 5rem;
+            color: white;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .cover-right {
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 80px 60px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('/wp-content/uploads/2024/07/Foto-SLide-Gallery-1-Large-SHERLY-1-1.jpeg') center/cover no-repeat;
         }
 
-        .cover-header {
+        .hamburger-menu {
             position: absolute;
-            top: 40px;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 2px;
+            top: 35px;
+            right: 35px;
+            width: 32px;
+            height: 22px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: white;
+            margin-bottom: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu span:last-child {
+            margin-bottom: 0;
         }
 
         .cover-content {
             text-align: center;
             color: white;
-            padding: 40px;
+            max-width: 550px;
+            width: 100%;
         }
 
-        .cover-content h3 {
-            font-size: 1.2rem;
-            font-weight: 300;
+        .cover-text-top {
+            font-size: 0.7rem;
             letter-spacing: 4px;
-            margin-bottom: 20px;
             text-transform: uppercase;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
 
-        .cover-content .couple-names {
+        .cover-couple-names {
             font-family: 'ovo', serif;
-            font-size: 4rem;
+            font-size: 4.8rem;
             font-weight: 400;
+            letter-spacing: 4px;
             margin: 30px 0;
-            letter-spacing: 2px;
+            line-height: 1.05;
         }
 
-        .cover-content .wedding-date {
-            font-size: 1rem;
+        .cover-date {
+            font-size: 0.75rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-top: 20px;
+            font-weight: 300;
+            margin-top: 30px;
         }
 
         .invitation-card {
@@ -700,21 +744,40 @@
             50% { transform: scale(1.05); }
         }
 
-        /* Scroll Indicator */
+        /* Scroll Indicator Circle */
         .scroll-indicator {
             position: absolute;
-            bottom: 30px;
+            bottom: 45px;
             left: 50%;
             transform: translateX(-50%);
-            color: white;
-            font-size: 2rem;
-            animation: bounce 2s infinite;
+            width: 48px;
+            height: 48px;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: bounce 2.5s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .scroll-indicator:hover {
+            transform: translateX(-50%) scale(1.15);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.2);
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
+            40% { transform: translateX(-50%) translateY(-18px); }
+            60% { transform: translateX(-50%) translateY(-9px); }
         }
 
         /* Footer */
@@ -824,9 +887,51 @@
         }
 
         /* Responsive */
+        @media (max-width: 1200px) {
+            .cover-left-name {
+                font-size: 4rem;
+            }
+
+            .cover-couple-names {
+                font-size: 4rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            .cover-content .couple-names {
-                font-size: 2.8rem;
+            /* Mobile: Full Screen Single Image */
+            .cover-overlay {
+                grid-template-columns: 1fr;
+            }
+
+            .cover-left {
+                display: none;
+            }
+
+            .cover-right {
+                padding: 60px 40px;
+            }
+
+            .cover-couple-names {
+                font-size: 3.5rem;
+                letter-spacing: 3px;
+            }
+
+            .hamburger-menu {
+                top: 25px;
+                right: 25px;
+                width: 28px;
+                height: 20px;
+            }
+
+            .scroll-indicator {
+                width: 45px;
+                height: 45px;
+                bottom: 35px;
+            }
+
+            .scroll-indicator svg {
+                width: 20px;
+                height: 20px;
             }
 
             .invitation-card {
@@ -923,8 +1028,28 @@
         }
 
         @media (max-width: 480px) {
-            .cover-content .couple-names {
-                font-size: 2.2rem;
+            .cover-right {
+                padding: 50px 30px;
+            }
+
+            .cover-text-top {
+                font-size: 0.6rem;
+                letter-spacing: 3px;
+            }
+
+            .cover-couple-names {
+                font-size: 2.8rem;
+                letter-spacing: 2px;
+            }
+
+            .cover-date {
+                font-size: 0.65rem;
+                letter-spacing: 2px;
+            }
+
+            .scroll-indicator {
+                width: 42px;
+                height: 42px;
             }
 
             .invitation-card h3 {
@@ -953,18 +1078,33 @@
     <!-- Cover/Landing Section -->
     <div id="section-cover">
         <div class="cover-overlay">
-            <div class="cover-header">Jimmy & Sherly</div>
-
-            <div class="cover-content">
-                <div class="invitation-card">
-                    <h1>Dear,</h1>
-                    <h3 class="guest-name">Guest Name</h3>
-                    <p>We apologize if there is any misspelling of name or title</p>
-                    <button class="open-button" id="open-invitation">Open Invitation</button>
-                </div>
+            <!-- Left Side - Image with Name at Bottom -->
+            <div class="cover-left">
+                <div class="cover-left-name">Jimmy Sherly</div>
             </div>
 
-            <div class="scroll-indicator">↓</div>
+            <!-- Right Side - Content with Image Background -->
+            <div class="cover-right">
+                <!-- Hamburger Menu -->
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="cover-content">
+                    <div class="cover-text-top">THE WEDDING OF</div>
+                    <div class="cover-couple-names">Jimmy & Sherly</div>
+                    <div class="cover-date">SATURDAY, 21 AUGUST 2023</div>
+                </div>
+
+                <!-- Scroll Indicator Circle -->
+                <div class="scroll-indicator" id="scrollIndicator">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1231,8 +1371,8 @@
             offset: 100
         });
 
-        // Open Invitation
-        document.getElementById('open-invitation').addEventListener('click', function() {
+        // Scroll Indicator Click - Open Invitation
+        document.getElementById('scrollIndicator').addEventListener('click', function() {
             document.getElementById('section-cover').classList.add('opened');
             // Auto play music
             const bgMusic = document.getElementById('bgMusic');
