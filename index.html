@@ -3472,7 +3472,128 @@ i.fas.fa-check-circle {visibility: hidden;}
 
 		</style>
 		<style>
-		/* Couple Horizontal Layout */
+		/* Minimalist Card Design for Couple Section */
+
+		/* Main container styling */
+		.couple-horizontal-layout {
+			background: #FFFFFF !important;
+			padding: 0 !important;
+			gap: 0 !important;
+		}
+
+		/* Individual card styling */
+		.couple-horizontal-layout > .e-con-full {
+			background: #FAFAFA;
+			padding: 60px 40px !important;
+			position: relative;
+			transition: all 0.4s ease;
+		}
+
+		.couple-horizontal-layout > .e-con-full:hover {
+			background: #FFFFFF;
+			box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+			transform: translateY(-5px);
+		}
+
+		/* Groom section - light beige */
+		.elementor-element-45926986 {
+			background: #F8F7F5 !important;
+		}
+
+		/* Bride section - soft white */
+		.elementor-element-39c33929 {
+			background: #FAFAFA !important;
+		}
+
+		/* Image styling - minimalist frame */
+		.couple-horizontal-layout img {
+			border-radius: 2px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+			transition: all 0.4s ease;
+			margin: 30px auto 25px !important;
+			max-width: 280px !important;
+			height: auto !important;
+		}
+
+		.couple-horizontal-layout img:hover {
+			box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+			transform: scale(1.02);
+		}
+
+		/* Typography refinement */
+		.couple-horizontal-layout .elementor-heading-title {
+			letter-spacing: 0.5px;
+			margin-bottom: 20px !important;
+		}
+
+		/* The groom/bride labels */
+		.elementor-element-234e3695 .elementor-heading-title,
+		.elementor-element-25bee340 .elementor-heading-title {
+			font-size: 11px !important;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: #999;
+			font-weight: 400 !important;
+			margin-bottom: 25px !important;
+		}
+
+		/* Names */
+		.elementor-element-6298a0ee .elementor-heading-title,
+		.elementor-element-1d874774 .elementor-heading-title {
+			font-size: 26px !important;
+			margin: 25px 0 18px !important;
+			color: #2A2A2A;
+			font-weight: 400 !important;
+			line-height: 1.4;
+		}
+
+		/* Description text */
+		.elementor-element-15d9e96c,
+		.elementor-element-26792b54 {
+			margin: 20px 0 30px !important;
+		}
+
+		.elementor-element-15d9e96c .elementor-widget-container,
+		.elementor-element-26792b54 .elementor-widget-container {
+			font-size: 13px !important;
+			line-height: 1.8 !important;
+			color: #666;
+		}
+
+		/* Button styling - minimal & clean */
+		.couple-horizontal-layout .elementor-button {
+			background: transparent !important;
+			border: 1px solid #E0E0E0 !important;
+			color: #333 !important;
+			padding: 10px 28px !important;
+			font-size: 11px !important;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			border-radius: 2px;
+			transition: all 0.3s ease;
+		}
+
+		.couple-horizontal-layout .elementor-button:hover {
+			background: #2A2A2A !important;
+			border-color: #2A2A2A !important;
+			color: #FFFFFF !important;
+		}
+
+		.couple-horizontal-layout .elementor-button svg {
+			width: 14px;
+			height: 14px;
+			transition: transform 0.3s ease;
+		}
+
+		.couple-horizontal-layout .elementor-button:hover svg {
+			transform: translateX(4px);
+		}
+
+		.couple-horizontal-layout .elementor-button svg polygon {
+			fill: currentColor;
+		}
+
+		/* Desktop Layout */
 		@media (min-width: 769px) {
 			.couple-horizontal-layout {
 				display: flex !important;
@@ -3483,19 +3604,64 @@ i.fas.fa-check-circle {visibility: hidden;}
 				flex: 1 1 50% !important;
 				max-width: 50% !important;
 			}
+
+			/* Add subtle divider between cards */
+			.elementor-element-45926986::after {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: 10%;
+				height: 80%;
+				width: 1px;
+				background: linear-gradient(to bottom,
+					transparent,
+					rgba(0,0,0,0.05) 20%,
+					rgba(0,0,0,0.05) 80%,
+					transparent
+				);
+			}
 		}
 
+		/* Mobile Layout */
 		@media (max-width: 768px) {
 			.couple-horizontal-layout {
 				flex-direction: column !important;
-				padding: 60px 30px !important;
-				gap: 80px !important;
 			}
 			.couple-horizontal-layout > .e-con-full {
 				flex: 1 1 100% !important;
 				max-width: 100% !important;
 				width: 100% !important;
+				padding: 50px 30px !important;
 			}
+
+			.couple-horizontal-layout img {
+				max-width: 240px !important;
+			}
+
+			/* Add horizontal divider for mobile */
+			.elementor-element-45926986::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 10%;
+				width: 80%;
+				height: 1px;
+				background: linear-gradient(to right,
+					transparent,
+					rgba(0,0,0,0.05) 20%,
+					rgba(0,0,0,0.05) 80%,
+					transparent
+				);
+			}
+		}
+
+		/* Section title styling */
+		.elementor-element-4355567f .elementor-heading-title {
+			font-size: 32px !important;
+			font-weight: 300 !important;
+			letter-spacing: 1px;
+			margin-bottom: 80px !important;
+			color: #2A2A2A;
 		}
 		</style>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
@@ -3624,8 +3790,8 @@ ECCLESIASTES 4:9-10						</div>
 			<h2 class="elementor-heading-title elementor-size-default">The Couple</h2>		</div>
 				</div>
 				</div>
-		<div data-dce-background-color="#F6F6F4" class="elementor-element elementor-element-56d0eefd e-con-full e-flex e-con e-child couple-horizontal-layout" data-id="56d0eefd" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="flex-direction: row !important; gap: 60px; align-items: flex-start; padding: 80px 60px !important;">
-		<div class="elementor-element elementor-element-45926986 e-con-full e-flex e-con e-child" data-id="45926986" data-element_type="container" data-aos="fade" data-aos-offset="0" data-aos-delay="300" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-anchor-placement="center" style="flex: 1; width: 100%; max-width: 50%;">
+		<div data-dce-background-color="#F6F6F4" class="elementor-element elementor-element-56d0eefd e-con-full e-flex e-con e-child couple-horizontal-layout" data-id="56d0eefd" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+		<div class="elementor-element elementor-element-45926986 e-con-full e-flex e-con e-child" data-id="45926986" data-element_type="container" data-aos="fade" data-aos-offset="0" data-aos-delay="300" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-anchor-placement="center">
 				<div class="elementor-element elementor-element-234e3695 elementor-widget__width-inherit wdp-sticky-section-no elementor-widget elementor-widget-heading" data-id="234e3695" data-element_type="widget" data-aos="zoom-in" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-anchor-placement="center" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 			<h2 class="elementor-heading-title elementor-size-default">The groom</h2>		</div>
@@ -3658,7 +3824,7 @@ consectetur adipiscing elit.						</div>
 				</div>
 				</div>
 				</div>
-		<div class="elementor-element elementor-element-39c33929 e-con-full e-flex e-con e-child" data-id="39c33929" data-element_type="container" data-aos="fade" data-aos-offset="0" data-aos-delay="300" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-anchor-placement="center" style="flex: 1; width: 100%; max-width: 50%;">
+		<div class="elementor-element elementor-element-39c33929 e-con-full e-flex e-con e-child" data-id="39c33929" data-element_type="container" data-aos="fade" data-aos-offset="0" data-aos-delay="300" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-anchor-placement="center">
 				<div class="elementor-element elementor-element-25bee340 wdp-sticky-section-no elementor-widget elementor-widget-heading" data-id="25bee340" data-element_type="widget" data-aos="zoom-in" data-aos-offset="0" data-aos-delay="200" data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-anchor-placement="center" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
 			<h2 class="elementor-heading-title elementor-size-default">The bride</h2>		</div>
