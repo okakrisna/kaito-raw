@@ -44,12 +44,23 @@
             --color-white: #FFFFFF;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'ediitor', serif;
             color: var(--color-dark);
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.7;
             background: var(--color-cream);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background: var(--color-beige);
+            color: var(--color-dark);
         }
 
         .hidden {
@@ -124,52 +135,57 @@
         }
 
         .invitation-card {
-            background: rgba(255,255,255,0.95);
-            padding: 50px 40px;
-            border-radius: 10px;
-            max-width: 450px;
+            background: rgba(255,255,255,0.96);
+            padding: 55px 45px;
+            border-radius: 3px;
+            max-width: 480px;
             margin: 40px auto 0;
             text-align: center;
             color: var(--color-dark);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         .invitation-card h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
             font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .invitation-card h3 {
             font-family: 'ovo', serif;
-            font-size: 2.5rem;
-            margin: 20px 0;
+            font-size: 2.8rem;
+            margin: 25px 0;
             font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         .invitation-card p {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             line-height: 1.8;
-            margin: 15px 0;
+            margin: 18px 0;
             color: #666;
         }
 
         .open-button {
             margin-top: 30px;
-            padding: 15px 50px;
+            padding: 16px 55px;
             background: var(--color-beige);
             border: none;
             cursor: pointer;
             font-family: 'ediitor', serif;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
             color: var(--color-dark);
+            border-radius: 2px;
         }
 
         .open-button:hover {
             background: var(--color-light-beige);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         /* Main Content */
@@ -180,7 +196,7 @@
 
         /* Section Styling */
         section {
-            padding: 100px 20px;
+            padding: 120px 20px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -203,26 +219,31 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             width: 100%;
+            padding: 0 20px;
         }
 
         h2.section-title {
             font-family: 'ovo', serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
             font-weight: 400;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            line-height: 1.3;
         }
 
         /* Couple Section */
         .couple-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 80px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 100px;
             margin-top: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .couple-card {
@@ -238,23 +259,27 @@
         }
 
         .couple-card .photo {
-            width: 300px;
-            height: 400px;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            aspect-ratio: 3/4;
             object-fit: cover;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
             display: block;
+            border-radius: 2px;
         }
 
         .couple-card h2.name {
             font-family: 'ovo', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin: 30px 0 20px;
             font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         .couple-card .description {
-            font-size: 0.9rem;
-            line-height: 1.8;
+            font-size: 0.95rem;
+            line-height: 1.9;
             color: #666;
             margin: 20px auto;
             max-width: 350px;
@@ -264,10 +289,10 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 30px;
+            padding: 13px 32px;
             background: var(--color-light-beige);
             border: none;
-            margin-top: 20px;
+            margin-top: 25px;
             cursor: pointer;
             font-family: 'ediitor', serif;
             font-size: 0.85rem;
@@ -276,17 +301,20 @@
             transition: all 0.3s ease;
             text-decoration: none;
             color: var(--color-dark);
+            border-radius: 2px;
         }
 
         .social-button:hover {
             background: var(--color-beige);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         /* Love Story Section */
         .love-story-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             margin: 60px 0;
         }
 
@@ -298,9 +326,9 @@
 
         .story-text {
             grid-column: 1 / -1;
-            max-width: 900px;
-            margin: 40px auto;
-            line-height: 1.9;
+            max-width: 950px;
+            margin: 60px auto;
+            line-height: 2;
             font-size: 1.05rem;
             color: #555;
             text-align: justify;
@@ -313,14 +341,19 @@
         /* Event Section */
         .event-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 80px;
             margin-top: 60px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .event-card {
             text-align: center;
-            padding: 40px 30px;
+            padding: 50px 40px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 3px;
         }
 
         .event-card h3 {
@@ -351,34 +384,38 @@
 
         .map-button {
             display: inline-block;
-            padding: 12px 40px;
+            padding: 14px 45px;
             background: var(--color-beige);
             color: var(--color-dark);
             text-decoration: none;
-            margin-top: 20px;
-            letter-spacing: 1px;
+            margin-top: 25px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: all 0.3s ease;
+            border-radius: 2px;
         }
 
         .map-button:hover {
             background: var(--color-light-beige);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
         /* Countdown Section */
         .countdown-wrapper {
             background: var(--color-beige);
-            padding: 80px 40px;
+            padding: 100px 40px;
             text-align: center;
         }
 
         .countdown-wrapper h3 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 2px;
+            font-family: 'ovo', serif;
+            font-size: 2.3rem;
+            margin-bottom: 50px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 1.4;
         }
 
         .countdown-grid {
@@ -394,10 +431,11 @@
         }
 
         .countdown-item .number {
-            font-size: 3.5rem;
-            font-weight: 300;
+            font-family: 'ovo', serif;
+            font-size: 4rem;
+            font-weight: 400;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .countdown-item .label {
@@ -407,22 +445,25 @@
         }
 
         .save-date-button {
-            padding: 15px 50px;
+            padding: 16px 55px;
             background: var(--color-light-beige);
             border: none;
             cursor: pointer;
             font-family: 'ediitor', serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.88rem;
+            letter-spacing: 1.5px;
             text-transform: lowercase;
             margin: 30px auto 0;
             display: inline-block;
             transition: all 0.3s ease;
             color: var(--color-dark);
+            border-radius: 2px;
         }
 
         .save-date-button:hover {
             background: var(--color-beige);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
         }
 
         /* Dress Code Section */
@@ -451,9 +492,16 @@
         }
 
         .color-box {
-            width: 60px;
-            height: 60px;
-            border-radius: 5px;
+            width: 65px;
+            height: 65px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .color-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .color-box.beige {
@@ -475,8 +523,8 @@
         /* Gallery Section */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin-top: 60px;
         }
 
@@ -500,11 +548,11 @@
 
         /* RSVP Section */
         .rsvp-form {
-            max-width: 600px;
+            max-width: 650px;
             margin: 40px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 10px;
+            padding: 50px 45px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px;
         }
 
         .form-group {
@@ -522,10 +570,32 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
+            padding: 14px 18px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+            color: white;
             font-family: 'ediitor', serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .form-group select option {
+            background: var(--color-dark);
+            color: white;
         }
 
         .form-group textarea {
@@ -535,19 +605,23 @@
 
         .submit-button {
             width: 100%;
-            padding: 15px;
+            padding: 17px;
             background: var(--color-beige);
             border: none;
             cursor: pointer;
             font-family: 'ediitor', serif;
-            font-size: 1rem;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            color: var(--color-dark);
+            border-radius: 2px;
         }
 
         .submit-button:hover {
             background: var(--color-light-beige);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(255,255,255,0.1);
         }
 
         /* Comments Display */
@@ -558,9 +632,14 @@
 
         .comment-item {
             background: rgba(255,255,255,0.05);
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .comment-item:hover {
+            background: rgba(255,255,255,0.08);
         }
 
         .comment-header {
@@ -608,7 +687,8 @@
 
         .music-toggle:hover {
             background: var(--color-light-beige);
-            transform: scale(1.1);
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
         }
 
         .music-toggle.playing {
@@ -641,14 +721,16 @@
         footer {
             background: var(--color-dark);
             color: white;
-            padding: 60px 20px;
+            padding: 100px 20px 60px;
             text-align: center;
         }
 
         footer h2 {
-            font-size: 2rem;
+            font-family: 'ovo', serif;
+            font-size: 2.3rem;
             margin-bottom: 30px;
-            font-weight: 300;
+            font-weight: 400;
+            letter-spacing: 1px;
         }
 
         footer p {
@@ -659,8 +741,9 @@
 
         footer .couple-names-footer {
             font-family: 'ovo', serif;
-            font-size: 2.5rem;
-            margin: 40px 0;
+            font-size: 3rem;
+            margin: 50px 0;
+            letter-spacing: 1px;
         }
 
         footer .credits {
@@ -743,32 +826,125 @@
         /* Responsive */
         @media (max-width: 768px) {
             .cover-content .couple-names {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+
+            .invitation-card {
+                padding: 45px 35px;
+                max-width: 90%;
+            }
+
+            .invitation-card h1 {
+                font-size: 1.8rem;
+            }
+
+            .invitation-card h3 {
+                font-size: 2.2rem;
             }
 
             .couple-container {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                gap: 80px;
+            }
+
+            .couple-card .photo {
+                max-width: 280px;
             }
 
             .love-story-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .event-container {
                 grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .event-card {
+                padding: 40px 30px;
             }
 
             h2.section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
+                margin-bottom: 60px;
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 15px;
             }
 
             section {
-                padding: 60px 20px;
+                padding: 80px 20px;
+            }
+
+            .container {
+                padding: 0 25px;
+            }
+
+            .countdown-wrapper {
+                padding: 80px 30px;
+            }
+
+            .countdown-wrapper h3 {
+                font-size: 1.9rem;
+            }
+
+            .countdown-item .number {
+                font-size: 3.2rem;
+            }
+
+            .countdown-grid {
+                gap: 20px;
+            }
+
+            .rsvp-form {
+                padding: 40px 30px;
+            }
+
+            footer {
+                padding: 80px 20px 50px;
+            }
+
+            footer .couple-names-footer {
+                font-size: 2.3rem;
+            }
+
+            .music-player {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .music-toggle {
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cover-content .couple-names {
+                font-size: 2.2rem;
+            }
+
+            .invitation-card h3 {
+                font-size: 1.9rem;
+            }
+
+            h2.section-title {
+                font-size: 1.8rem;
+            }
+
+            .couple-card h2.name {
+                font-size: 1.8rem;
+            }
+
+            .countdown-item .number {
+                font-size: 2.8rem;
+            }
+
+            .event-card h3 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -969,27 +1145,27 @@
                     <form id="rsvpForm">
                         <div class="form-group">
                             <label>Full Name *</label>
-                            <input type="text" name="name" required>
+                            <input type="text" name="name" placeholder="Your full name" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" name="email">
+                            <input type="email" name="email" placeholder="your.email@example.com">
                         </div>
                         <div class="form-group">
                             <label>Will you attend? *</label>
                             <select name="attendance" required>
-                                <option value="">Select...</option>
+                                <option value="">Please select...</option>
                                 <option value="yes">Yes, I will attend</option>
                                 <option value="no">Sorry, I can't make it</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Number of Guests</label>
-                            <input type="number" name="guests" min="1" max="5" value="1">
+                            <input type="number" name="guests" min="1" max="5" value="1" placeholder="1">
                         </div>
                         <div class="form-group">
                             <label>Your Message for the couple</label>
-                            <textarea name="message" placeholder="Share your wishes..."></textarea>
+                            <textarea name="message" placeholder="Share your warmest wishes and congratulations..."></textarea>
                         </div>
                         <button type="submit" class="submit-button">Send Wishes</button>
                     </form>
